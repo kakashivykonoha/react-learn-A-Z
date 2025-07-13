@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import Header from './header.js' 
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import ReactDOM from "react-dom/client";
+import Slider from './slider.js'
+import Home from './pages/home.js';
+import New from './pages/new.js';
+import Login from './pages/Login.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function Todolist() {
+return (
+    <div>
+  <Header/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<New />} />
+          <Route path="/contact" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+  <Slider/>
+</div>
+);
 }
 
-export default App;
+export default Todolist;
