@@ -1,4 +1,4 @@
-/*  import { sculptureList } from './data.js';
+/*   import { sculptureList } from './data.js';
 
 export default function Gallery() {
   let index = 0;
@@ -30,16 +30,21 @@ export default function Gallery() {
     </>
   );
 }
- */ 
-/* import { useState } from 'react';
+   */
+import { useState } from 'react';
 import { sculptureList } from './data.js';
 
 export default function Gallery() {
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  const hasNext = index < sculptureList.length - 1;
 
   function handleNextClick() {
-    setIndex(index + 1);
+    if (hasNext) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
   }
 
   function handleMoreClick() {
@@ -47,30 +52,30 @@ export default function Gallery() {
   }
 
   let sculpture = sculptureList[index];
-  return (
-    <>
+  return ( <>
       <button onClick={handleNextClick}>
         Next
       </button>
       <h2>
-        <i>{sculpture.name} </i> 
+        <i>{sculpture.name} </i>
         by {sculpture.artist}
       </h2>
-      <h3>  
+      <h3>
         ({index + 1} of {sculptureList.length})
       </h3>
       <button onClick={handleMoreClick}>
         {showMore ? 'Hide' : 'Show'} details
       </button>
       {showMore && <p>{sculpture.description}</p>}
-      <img 
-        src={sculpture.url} 
+      <img
+        src={sculpture.url}
         alt={sculpture.alt}
       />
     </>
   );
 }
- */
+
+
 /*
 import React from 'react';
 
@@ -103,7 +108,7 @@ export default Component;
 
    */
 
-import React from 'react';
+
 
 /* class Component extends React.Component {
         state = {
@@ -133,6 +138,7 @@ import React from 'react';
       }
 
  */
+/* 
 class App extends React.Component {
   state = {
     count: 0
@@ -159,3 +165,4 @@ class App extends React.Component {
 }
 
 export default App ; 
+ */
